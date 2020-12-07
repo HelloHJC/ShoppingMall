@@ -2,8 +2,10 @@ package po;
 public class Commodity {
     private int Commodity_ID;
     private String Commodity_Name;
+    private int Commodity_TypeID;
     private double Commodity_Price;
-    private int Commodity_Stock;
+    private String Commodity_Descn;
+    private int Commodity_Qtyl;
 
     public int getCommodity_ID() {
         return Commodity_ID;
@@ -29,11 +31,27 @@ public class Commodity {
         Commodity_Price = commodity_Price;
     }
 
-    public int getCommodity_Stock() {
-        return Commodity_Stock;
+    public int getCommodity_TypeID() {
+        return Commodity_TypeID;
     }
 
-    public void setCommodity_Stock(int commodity_Stock) {
-        Commodity_Stock = commodity_Stock;
+    public void setCommodity_TypeID(int commodity_TypeID) {
+        Commodity_TypeID = commodity_TypeID;
+    }
+
+    public String getCommodity_Descn() {
+        return Commodity_Descn;
+    }
+
+    public void setCommodity_Descn(String commodity_Descn) {
+        Commodity_Descn = commodity_Descn;
+    }
+
+    public int getCommodity_Qtyl() {
+        return Commodity_Qtyl;
+    }
+
+    public void setCommodity_Qtyl(int commodity_Qtyl) {
+        Commodity_Qtyl = commodity_Qtyl;
     }
 }

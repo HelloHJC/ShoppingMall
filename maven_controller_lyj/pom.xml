@@ -11,5 +11,11 @@
 
     <artifactId>maven_controller_lyj</artifactId>
 
-
+    <dependencies>
+        <!--引用service层-->
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>maven_service</artifactId>
+        </dependency>
+    </dependencies>
 </project>

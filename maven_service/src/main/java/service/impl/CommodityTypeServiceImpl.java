@@ -15,4 +15,16 @@ public class CommodityTypeServiceImpl implements CommodityTypeService {
     public List<CommodityType> selectAll(CommodityType commodityType) {
         return CommodityTypeDao.selectAll(commodityType);
     }
+
+    public void insert(CommodityType commodityType) {
+
+    }
+
+    public void update(CommodityType commodityType) {
+
+    }
+
+    public void delete(CommodityType commodityType) {
+
+    }
 }
