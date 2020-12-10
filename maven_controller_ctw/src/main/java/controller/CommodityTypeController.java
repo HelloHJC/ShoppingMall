@@ -48,6 +48,7 @@ public class CommodityTypeController {
     @ResponseBody
     public String insert(CommodityType type) throws JsonProcessingException {
         commodityTypeService.insert(type);
+        System.out.println("Pull request test");
         return SerialUtils.getSuccessResult();
     }
 }
