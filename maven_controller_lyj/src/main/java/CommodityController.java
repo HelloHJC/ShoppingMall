@@ -3,6 +3,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/commoditytype")
-public class CommodityController {
-
+public class CommodityController{
 }
