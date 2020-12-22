@@ -76,11 +76,31 @@
         <fastjson.version>1.2.53</fastjson.version>
         <tomcat8-maven-plugin.version>3.0-r1756463</tomcat8-maven-plugin.version>
         <jackson.version>2.9.5</jackson.version>
+        <org.codehaus.jackson.version>1.9.13</org.codehaus.jackson.version>
+        <com.github.pagehelper.version>5.2.0</com.github.pagehelper.version>
     </properties>
 
     <dependencyManagement>
 
         <dependencies>
+
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${com.github.pagehelper.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>${org.codehaus.jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-core-asl</artifactId>
+                <version>${org.codehaus.jackson.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>

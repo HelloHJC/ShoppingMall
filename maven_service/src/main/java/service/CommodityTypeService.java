@@ -6,6 +6,7 @@ import java.util.List;
 
 
 public interface CommodityTypeService {
+    public CommodityType findByID(CommodityType commodityType);
     public List<CommodityType> selectAll(CommodityType commodityType);
     public void insert(CommodityType commodityType);
     public void update(CommodityType commodityType);

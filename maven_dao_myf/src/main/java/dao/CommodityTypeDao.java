@@ -10,8 +10,9 @@ import java.util.List;
 @Repository("CommodityTypeDao")
 @Mapper
 public interface CommodityTypeDao {
-    public void update(Commodity commodityType);
-    public void delete(Commodity commodityType);
-    public void insert(Commodity commodityType);
+    public void update(CommodityType commodityType);
+    public void delete(CommodityType commodityType);
+    public void insert(CommodityType commodityType);
+    public CommodityType findByID(CommodityType commodityType);
     public List<CommodityType> selectAll(CommodityType commodityType);
 }

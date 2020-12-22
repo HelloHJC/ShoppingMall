@@ -21,7 +21,7 @@ public class GoodsDaoTest {
     public void testSelectAll()
     {
         for (CommodityType type:dao.selectAll(null)) {
-            System.out.println(type.getCommdityType_Name());
+            System.out.println(type.getCommodityType_Name());
         }
     }
     @Test
@@ -30,7 +30,7 @@ public class GoodsDaoTest {
         ApplicationContext ctx=new ClassPathXmlApplicationContext("applicationContext.xml");
         CommodityTypeDao dao=ctx.getBean(CommodityTypeDao.class);
         for (CommodityType type:dao.selectAll(null)) {
-            System.out.println(type.getCommdityType_Name());
+            System.out.println(type.getCommodityType_Name());
         }
     }
 }

@@ -15,7 +15,7 @@ public class GoodsDaoTest2 {
     public void testSelectAll()
     {
         for (CommodityType type:dao.selectAll(null)) {
-            System.out.println(type.getCommdityType_Name());
+            System.out.println(type.getCommodityType_Name());
         }
     }
 }

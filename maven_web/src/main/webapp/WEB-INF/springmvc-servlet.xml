@@ -13,10 +13,16 @@
     <context:component-scan base-package="service"></context:component-scan>
     <context:component-scan base-package="dao"></context:component-scan>
 
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg value="UTF-8" />
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/page/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
-    <mvc:annotation-driven></mvc:annotation-driven>
 </beans>

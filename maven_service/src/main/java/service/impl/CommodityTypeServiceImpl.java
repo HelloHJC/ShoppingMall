@@ -11,20 +11,25 @@ import java.util.List;
 @Service
 public class CommodityTypeServiceImpl implements CommodityTypeService {
     @Autowired
-    private CommodityTypeDao CommodityTypeDao;
+    private CommodityTypeDao commodityTypeDao;
+
+    public CommodityType findByID(CommodityType commodityType) {
+        return commodityTypeDao.findByID(commodityType);
+    }
+
     public List<CommodityType> selectAll(CommodityType commodityType) {
-        return CommodityTypeDao.selectAll(commodityType);
+        return commodityTypeDao.selectAll(commodityType);
     }
 
     public void insert(CommodityType commodityType) {
-
+        commodityTypeDao.insert(commodityType);
     }
 
     public void update(CommodityType commodityType) {
-
+        commodityTypeDao.update(commodityType);
     }
 
     public void delete(CommodityType commodityType) {
-
+        commodityTypeDao.delete(commodityType);
     }
 }
