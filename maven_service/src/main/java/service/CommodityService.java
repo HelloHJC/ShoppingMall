@@ -11,4 +11,5 @@ public interface CommodityService {
     public void insert(Commodity commodity);
     public void update(Commodity commodity);
     public void delete(Commodity commodity);
+    public Commodity findByID(Commodity commodity);
 }

@@ -4,8 +4,35 @@ public class Commodity {
     private String Commodity_Name;
     private int Commodity_TypeID;
     private double Commodity_Price;
-    private String Commodity_Descn;
-    private int Commodity_Qtyl;
+    private String Commodity_Description;
+    private String Commodity_Picture;
+    private String CommodityType_Name;
+    private int pageSize;
+    private int pageNum;
+
+    public String getCommodityType_Name() {
+        return CommodityType_Name;
+    }
+
+    public void setCommodityType_Name(String commodityType_Name) {
+        CommodityType_Name = commodityType_Name;
+    }
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public int getPageNum() {
+        return pageNum;
+    }
+
+    public void setPageNum(int pageNum) {
+        this.pageNum = pageNum;
+    }
 
     public int getCommodity_ID() {
         return Commodity_ID;
@@ -23,14 +50,6 @@ public class Commodity {
         Commodity_Name = commodity_Name;
     }
 
-    public double getCommodity_Price() {
-        return Commodity_Price;
-    }
-
-    public void setCommodity_Price(double commodity_Price) {
-        Commodity_Price = commodity_Price;
-    }
-
     public int getCommodity_TypeID() {
         return Commodity_TypeID;
     }
@@ -39,19 +58,27 @@ public class Commodity {
         Commodity_TypeID = commodity_TypeID;
     }
 
-    public String getCommodity_Descn() {
-        return Commodity_Descn;
+    public double getCommodity_Price() {
+        return Commodity_Price;
     }
 
-    public void setCommodity_Descn(String commodity_Descn) {
-        Commodity_Descn = commodity_Descn;
+    public void setCommodity_Price(double commodity_Price) {
+        Commodity_Price = commodity_Price;
     }
 
-    public int getCommodity_Qtyl() {
-        return Commodity_Qtyl;
+    public String getCommodity_Description() {
+        return Commodity_Description;
     }
 
-    public void setCommodity_Qtyl(int commodity_Qtyl) {
-        Commodity_Qtyl = commodity_Qtyl;
+    public void setCommodity_Description(String commodity_Description) {
+        Commodity_Description = commodity_Description;
+    }
+
+    public String getCommodity_Picture() {
+        return Commodity_Picture;
+    }
+
+    public void setCommodity_Picture(String commodity_Picture) {
+        Commodity_Picture = commodity_Picture;
     }
 }

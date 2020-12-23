@@ -5,6 +5,24 @@ public class CommodityType {
     private String CommodityType_Name;
     private String CommodityType_Description;
     private String CommodityType_Icon;
+    private int pageSize;
+    private int pageNum;
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public int getPageNum() {
+        return pageNum;
+    }
+
+    public void setPageNum(int pageNum) {
+        this.pageNum = pageNum;
+    }
 
     public Integer getCommodityType_ID() {
         return CommodityType_ID;

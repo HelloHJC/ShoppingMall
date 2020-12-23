@@ -1,14 +1,11 @@
 package controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import po.CommodityType;
@@ -26,12 +23,13 @@ public class CommodityTypeController {
     @PostMapping(value = "/list")
     @ResponseBody
     public String list(CommodityType type) throws JsonProcessingException {
-        PageHelper.startPage(1,2);
+        PageHelper.startPage(type.getPageNum(),type.getPageSize());
         List<CommodityType> commodityTypeList = commodityTypeService.selectAll(type);
         for (CommodityType type2:commodityTypeList) {
             System.out.println(type2.getCommodityType_Description());
         }
-        return SerialUtils.toJSONString(commodityTypeList);
+        PageInfo pageInfo = new PageInfo(commodityTypeList);
+        return SerialUtils.toJSONString(pageInfo);
     }
 
     @PostMapping(value = "/findByID")

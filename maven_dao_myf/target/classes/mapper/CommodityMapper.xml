@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.CommodityDao">
+    <select id="selectAll" parameterType="po.Commodity" resultType="po.Commodity">
+		SELECT Commodity_ID,Commodity_Name,Commodity_Description,Commodity_TypeID,Commodity_Price,Commodity_Picture,Commodity_State,CommodityType_Name
+	 	FROM `tb_commodity` left join `tb_commoditytype` on `tb_commodity`.Commodity_TypeID = `tb_commoditytype`.CommodityType_ID
+		where 1 = 1
+	</select>
+	<select id="findByID" parameterType="po.Commodity" resultType="po.Commodity">
+		SELECT Commodity_ID,Commodity_Name,Commodity_Description,Commodity_TypeID,Commodity_Price,Commodity_Picture,Commodity_State FROM `tb_commodity`
+		where Commodity_ID = #{Commodity_ID}
+	</select>
+	<update id="update" parameterType="po.Commodity">
+		update `tb_commodity`
+		set Commodity_Name = #{Commodity_Name},
+		Commodity_Description = #{Commodity_Description},
+		Commodity_TypeID = #{Commodity_TypeID},
+		Commodity_Price = #{Commodity_Price},
+		Commodity_Picture = #{Commodity_Picture},
+		Commodity_State = #{Commodity_State}
+		where Commodity_ID = #{Commodity_ID}
+	</update>
+	<insert id="insert" parameterType="po.Commodity">
+		insert into `tb_commodity`(Commodity_Name,Commodity_Description,Commodity_TypeID,Commodity_Price,Commodity_Picture,Commodity_State)
+		 values(#{Commodity_Name},#{Commodity_Description},#{Commodity_TypeID},#{Commodity_Price},#{Commodity_Picture},#{Commodity_State})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from `tb_commodity` where Commodity_ID = #{Commodity_ID}
+	</delete>
+</mapper>

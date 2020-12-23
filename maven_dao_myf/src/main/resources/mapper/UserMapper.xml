@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.CommodityTypeDao">
+    <select id="selectAll" parameterType="po.CommodityType" resultType="po.CommodityType">
+		SELECT CommodityType_ID,CommodityType_Name,CommodityType_Description,CommodityType_Icon FROM `tb_commoditytype`
+		where 1 = 1
+	</select>
+	<select id="findByID" parameterType="po.CommodityType" resultType="po.CommodityType">
+		SELECT CommodityType_ID,CommodityType_Name,CommodityType_Description,CommodityType_Icon FROM `tb_commoditytype`
+		where CommodityType_ID = #{CommodityType_ID}
+	</select>
+	<update id="update" parameterType="po.CommodityType">
+		update `tb_commoditytype`
+		set CommodityType_Name = #{CommodityType_Name},
+		CommodityType_Description = #{CommodityType_Description},
+		CommodityType_Icon = #{CommodityType_Icon}
+		where CommodityType_ID = #{CommodityType_ID}
+	</update>
+	<insert id="insert" parameterType="po.CommodityType">
+		insert into `tb_commoditytype`(CommodityType_Name,CommodityType_Description,CommodityType_Icon) values(#{CommodityType_Name},#{CommodityType_Description},#{CommodityType_Icon})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from `tb_commoditytype` where CommodityType_ID = #{CommodityType_ID}
+	</delete>
+</mapper>
