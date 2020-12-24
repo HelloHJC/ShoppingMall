@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserDao">
+	<select id="login" parameterType="po.User" resultType="po.User">
+		select User_ID,User_Email,User_Name,User_Password,User_Pic from `tb_user`
+		where User_Email = #{User_Email} and
+		User_Password = #{User_Password}
+	</select>
+    <select id="selectAll" parameterType="po.User" resultType="po.User">
+		SELECT User_ID,User_Email,User_Name,User_Password,User_Pic FROM `tb_user`
+		where 1 = 1
+		<if test="User_Email != null and User_Email != ''">
+			and User_Email = #{User_Email}
+		</if>
+	</select>
+	<select id="findByID" parameterType="po.User" resultType="po.User">
+		SELECT User_ID,User_Email,User_Name,User_Password,User_Pic FROM `tb_user`
+		where User_ID = #{User_ID}
+	</select>
+	<update id="update" parameterType="po.User">
+		update `tb_user`
+		set User_Email = #{User_Email},
+		User_Name = #{User_Name},
+		User_Password = #{User_Password},
+		User_Pic = #{User_Pic}
+		where User_ID = #{User_ID}
+	</update>
+	<insert id="insert" parameterType="po.User">
+		insert into `tb_user`(User_Email,User_Name,User_Password,User_Pic) values(#{User_Email},#{User_Name},#{User_Password},#{User_Pic})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from `tb_user` where User_ID = #{User_ID}
+	</delete>
+</mapper>

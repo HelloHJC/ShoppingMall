@@ -1,15 +1,16 @@
 package service;
 
-import org.springframework.stereotype.Service;
 import po.Commodity;
+import po.User;
 
 import java.util.List;
 
 
-public interface CommodityService {
-    public List<Commodity> selectAll(Commodity commodity);
-    public void insert(Commodity commodity);
-    public void update(Commodity commodity);
-    public void delete(Commodity commodity);
-    public Commodity findByID(Commodity commodity);
+public interface UserService {
+    public List<User> login(User user);
+    public List<User> selectAll(User user);
+    public void insert(User user);
+    public void update(User user);
+    public void delete(User user);
+    public User findByID(User user);
 }

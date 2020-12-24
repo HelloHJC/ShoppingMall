@@ -41,6 +41,10 @@
             <groupId>org.example</groupId>
             <artifactId>maven_controller_lyj</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>maven_controller_dx</artifactId>
+        </dependency>
     </dependencies>
     <build>
     </build>

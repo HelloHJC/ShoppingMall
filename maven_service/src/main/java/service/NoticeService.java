@@ -1,15 +1,14 @@
 package service;
 
-import po.Commodity;
-import po.User;
+import po.Notice;
 
 import java.util.List;
 
 
-public interface UserService {
-    public List<User> selectAll(User user);
-    public void insert(User user);
-    public void update(User user);
-    public void delete(User user);
-    public User findByID(User user);
+public interface NoticeService {
+    public List<Notice> selectAll(Notice user);
+    public void insert(Notice user);
+    public void update(Notice user);
+    public void delete(Notice user);
+    public Notice findByID(Notice user);
 }

@@ -7,8 +7,17 @@ public class Commodity {
     private String Commodity_Description;
     private String Commodity_Picture;
     private String CommodityType_Name;
+    private String Commodity_State;
     private int pageSize;
     private int pageNum;
+    public String getCommodity_State() {
+        return Commodity_State;
+    }
+
+    public void setCommodity_State(String commodity_State) {
+        Commodity_State = commodity_State;
+    }
+
 
     public String getCommodityType_Name() {
         return CommodityType_Name;

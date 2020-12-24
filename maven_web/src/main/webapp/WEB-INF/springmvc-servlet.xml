@@ -12,7 +12,6 @@
     <context:component-scan base-package="controller"></context:component-scan>
     <context:component-scan base-package="service"></context:component-scan>
     <context:component-scan base-package="dao"></context:component-scan>
-
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="true">
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
@@ -20,7 +19,9 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
-
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="10485760"></property>
+    </bean>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/page/"></property>
         <property name="suffix" value=".jsp"></property>

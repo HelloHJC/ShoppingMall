@@ -7,6 +7,13 @@
 		SELECT Commodity_ID,Commodity_Name,Commodity_Description,Commodity_TypeID,Commodity_Price,Commodity_Picture,Commodity_State,CommodityType_Name
 	 	FROM `tb_commodity` left join `tb_commoditytype` on `tb_commodity`.Commodity_TypeID = `tb_commoditytype`.CommodityType_ID
 		where 1 = 1
+		<if test="Commodity_State!=null and Commodity_State != ''">
+			and Commodity_State = #{Commodity_State}
+		</if>
+		<if test="Commodity_TypeID!=null and Commodity_TypeID != 0">
+			and Commodity_TypeID = #{Commodity_TypeID}
+			order by Commodity_State desc
+		</if>
 	</select>
 	<select id="findByID" parameterType="po.Commodity" resultType="po.Commodity">
 		SELECT Commodity_ID,Commodity_Name,Commodity_Description,Commodity_TypeID,Commodity_Price,Commodity_Picture,Commodity_State FROM `tb_commodity`

@@ -20,4 +20,12 @@ public class SerialUtils {
                 .writeValueAsString(map);
         return jsonString;
     }
+
+    public static String getErrorResult() throws JsonProcessingException {
+        HashMap<String,String> map = new HashMap<String, String>();
+        map.put("result","error");
+        String jsonString = objectMapper.writerWithDefaultPrettyPrinter()
+                .writeValueAsString(map);
+        return jsonString;
+    }
 }

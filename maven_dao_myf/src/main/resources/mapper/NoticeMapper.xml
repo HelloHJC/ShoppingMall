@@ -2,27 +2,26 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.UserDao">
-    <select id="selectAll" parameterType="po.User" resultType="po.User">
-		SELECT User_ID,User_Email,User_Name,User_Password,User_Pic FROM `tb_user`
+<mapper namespace="dao.NoticeDao">
+    <select id="selectAll" parameterType="po.Notice" resultType="po.Notice">
+		SELECT Notice_ID,Notice_Title,Notice_Content,Notice_Picture FROM `tb_notice`
 		where 1 = 1
 	</select>
-	<select id="findByID" parameterType="po.User" resultType="po.User">
-		SELECT User_ID,User_Email,User_Name,User_Password,User_Pic FROM `tb_user`
-		where User_ID = #{User_ID}
+	<select id="findByID" parameterType="po.Notice" resultType="po.Notice">
+		SELECT Notice_ID,Notice_Title,Notice_Content,Notice_Picture FROM `tb_notice`
+		where Notice_ID = #{Notice_ID}
 	</select>
-	<update id="update" parameterType="po.User">
-		update `tb_user`
-		set User_Email = #{User_Email},
-		User_Name = #{User_Name},
-		User_Password = #{User_Password},
-		User_Pic = #{User_Pic}
-		where User_ID = #{User_ID}
+	<update id="update" parameterType="po.Notice">
+		update `tb_notice`
+		set Notice_Title = #{Notice_Title},
+		Notice_Content = #{Notice_Content},
+		Notice_Picture = #{Notice_Picture}
+		where Notice_ID = #{Notice_ID}
 	</update>
-	<insert id="insert" parameterType="po.User">
-		insert into `tb_user`(User_Email,User_Name,User_Password,User_Pic) values(#{User_Email},#{User_Name},#{User_Password},#{User_Pic})
+	<insert id="insert" parameterType="po.Notice">
+		insert into `tb_notice`(Notice_Title,Notice_Content,Notice_Picture) values(#{Notice_Title},#{Notice_Content},#{Notice_Picture})
 	</insert>
 	<delete id="delete" parameterType="int">
-		delete from `tb_user` where User_ID = #{User_ID}
+		delete from `tb_notice` where Notice_ID = #{Notice_ID}
 	</delete>
 </mapper>

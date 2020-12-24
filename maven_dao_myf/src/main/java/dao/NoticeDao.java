@@ -3,16 +3,16 @@ package dao;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-import po.Commodity;
-import po.User;
+import po.Notice;
 
 import java.util.List;
-@Repository("UserDao")
+
+@Repository("NoticeDao")
 @Mapper
-public interface UserDao {
-    public void update(User user);
-    public void delete(User user);
-    public void insert(User user);
-    public User findByID(User user);
-    public List<User> selectAll(User user);
+public interface NoticeDao {
+    public void update(Notice user);
+    public void delete(Notice user);
+    public void insert(Notice user);
+    public Notice findByID(Notice user);
+    public List<Notice> selectAll(Notice user);
 }

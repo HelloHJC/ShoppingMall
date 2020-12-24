@@ -8,56 +8,56 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import po.User;
-import service.UserService;
+import po.Notice;
+import service.NoticeService;
 import utils.SerialUtils;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/notice")
+public class NoticeController {
     @Autowired
-    private UserService userService;
+    private NoticeService noticeService;
     @PostMapping(value = "/list")
     @ResponseBody
-    public String list(User user) throws JsonProcessingException {
-        int pageNum = user.getPageNum();
-        int pageSize = user.getPageSize();
+    public String list(Notice notice) throws JsonProcessingException {
+        int pageNum = notice.getPageNum();
+        int pageSize = notice.getPageSize();
         if (pageNum != -1 && pageSize != -1)
         {
-            PageHelper.startPage(user.getPageNum(),user.getPageSize());
+            PageHelper.startPage(notice.getPageNum(),notice.getPageSize());
         }
-        List<User> commodityTypeList = userService.selectAll(user);
+        List<Notice> commodityTypeList = noticeService.selectAll(notice);
         PageInfo pageInfo = new PageInfo(commodityTypeList);
         return SerialUtils.toJSONString(pageInfo);
     }
 
     @PostMapping(value = "/findByID")
     @ResponseBody
-    public String findById(User user) throws JsonProcessingException {
-        User findUser = userService.findByID(user);
-        return SerialUtils.toJSONString(findUser);
+    public String findById(Notice notice) throws JsonProcessingException {
+        Notice findNotice = noticeService.findByID(notice);
+        return SerialUtils.toJSONString(findNotice);
     }
 
     @PostMapping(value = "/update")
     @ResponseBody
-    public String update(User user) throws JsonProcessingException {
-        userService.update(user);
+    public String update(Notice notice) throws JsonProcessingException {
+        noticeService.update(notice);
         return SerialUtils.getSuccessResult();
     }
 
     @PostMapping(value = "/delete")
     @ResponseBody
-    public String delete(User user) throws JsonProcessingException {
-        userService.delete(user);
+    public String delete(Notice notice) throws JsonProcessingException {
+        noticeService.delete(notice);
         return SerialUtils.getSuccessResult();
     }
 
     @PostMapping(value = "/insert")
     @ResponseBody
-    public String insert(User user) throws JsonProcessingException {
-        userService.insert(user);
+    public String insert(Notice notice) throws JsonProcessingException {
+        noticeService.insert(notice);
         return SerialUtils.getSuccessResult();
     }
 }

@@ -5,7 +5,6 @@ import po.CommodityType;
 
 import java.util.List;
 
-@Service
 public interface CommodityTypeService {
     public List<CommodityType> selectAll(CommodityType commodityType);
     public void insert(CommodityType commodityType);

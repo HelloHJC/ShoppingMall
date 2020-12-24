@@ -1,35 +1,34 @@
 package service.impl;
 
-import dao.UserDao;
+import dao.NoticeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import po.User;
-import service.UserService;
-import service.UserService;
+import po.Notice;
+import service.NoticeService;
 
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class NoticeServiceImpl implements NoticeService {
     @Autowired
-    private UserDao commodityDao;
-    public List<User> selectAll(User commodity) {
-        return commodityDao.selectAll(commodity);
+    private NoticeDao noticeDao;
+    public List<Notice> selectAll(Notice commodity) {
+        return noticeDao.selectAll(commodity);
     }
 
-    public void insert(User commodity) {
-        commodityDao.insert(commodity);
+    public void insert(Notice commodity) {
+        noticeDao.insert(commodity);
     }
 
-    public void update(User commodity) {
-        commodityDao.update(commodity);
+    public void update(Notice commodity) {
+        noticeDao.update(commodity);
     }
 
-    public void delete(User commodity) {
-        commodityDao.delete(commodity);
+    public void delete(Notice commodity) {
+        noticeDao.delete(commodity);
     }
 
-    public User findByID(User commodity) {
-        return commodityDao.findByID(commodity);
+    public Notice findByID(Notice commodity) {
+        return noticeDao.findByID(commodity);
     }
 }

@@ -1,35 +1,40 @@
 package service.impl;
 
-import dao.CommodityDao;
-import dao.CommodityTypeDao;
+import dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import po.Commodity;
-import service.CommodityService;
+import po.User;
+import service.UserService;
+import service.UserService;
 
 import java.util.List;
 
 @Service
-public class CommodityServiceImpl implements CommodityService {
+public class UserServiceImpl implements UserService {
     @Autowired
-    private CommodityDao commodityDao;
-    public List<Commodity> selectAll(Commodity commodity) {
+    private UserDao commodityDao;
+
+    public List<User> login(User user) {
+        return commodityDao.login(user);
+    }
+
+    public List<User> selectAll(User commodity) {
         return commodityDao.selectAll(commodity);
     }
 
-    public void insert(Commodity commodity) {
+    public void insert(User commodity) {
         commodityDao.insert(commodity);
     }
 
-    public void update(Commodity commodity) {
+    public void update(User commodity) {
         commodityDao.update(commodity);
     }
 
-    public void delete(Commodity commodity) {
+    public void delete(User commodity) {
         commodityDao.delete(commodity);
     }
 
-    public Commodity findByID(Commodity commodity) {
+    public User findByID(User commodity) {
         return commodityDao.findByID(commodity);
     }
 }
